@@ -26,7 +26,7 @@ mount ${TARGET_DISK}1 /mnt
 echo -e "\033[1;31mmounted partition to mnt\033[0m"
 
 # copy the live system over to the new partition
-rsync -aAXv / --exclude=/mnt --exclude=/proc --exclude=/sys --exclude=/dev /mnt/
+rsync -aAXv / --exclude=/mnt --exclude=/rofs --exclude=/proc --exclude=/sys --exclude=/dev /mnt/
 
 echo -e "\033[1;31mcopied rootfs to partition\033[0m"
 
