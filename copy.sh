@@ -11,11 +11,9 @@ TARGET_DISK="/dev/sda"
 # create new partition with mbr
 parted ${TARGET_DISK} mklabel msdos
 
-parted ${TARGET_DISK} mkpart primary ext4 0% 100%
-
 echo -e "\033[1;31mdisk wiped\033[0m"
 
-echo -e "o\nn\np\n1\n\nt\n83\nw" | fdisk ${TARGET_DISK}
+parted ${TARGET_DISK} mkpart primary ext4 0% 100%
 
 echo -e "\033[1;31mpartition created\033[0m"
 
