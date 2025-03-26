@@ -9,9 +9,9 @@ fi
 TARGET_DISK="/dev/sda"
 
 # wipe partitions and create a new one with mbr
-echo -e "o\nw" | sudo fdisk ${TARGET_DISK}1
+echo -e "o\nw" | sudo fdisk ${TARGET_DISK}
 
-echo -e "o\nn\np\n1\n\nt\n83\nw" | sudo fdisk ${TARGET_DISK}1
+echo -e "o\nn\np\n1\n\nt\n83\nw" | sudo fdisk ${TARGET_DISK}
 
 mkfs.ext4 ${TARGET_DISK}1
 
