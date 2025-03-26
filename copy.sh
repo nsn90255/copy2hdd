@@ -9,11 +9,11 @@ fi
 TARGET_DISK="/dev/sda"
 
 # wipe partitions and create a new one with mbr
-echo -e "o\nw" | sudo fdisk ${TARGET_DISK}
+echo -e "o\nw" | fdisk ${TARGET_DISK}
 
 echo -e "\033[1;31mdisk wiped\033[0m"
 
-echo -e "o\nn\np\n1\n\nt\n83\nw" | sudo fdisk ${TARGET_DISK}
+echo -e "o\nn\np\n1\n\nt\n83\nw" | fdisk ${TARGET_DISK}
 
 echo -e "\033[1;31mpartition created\033[0m"
 
