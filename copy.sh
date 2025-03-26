@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-if ![ "$(id -u)" -eq 0 ]; then
+if ! [ "$(id -u)" -eq 0 ]; then
 	echo "run as root."
 	return 1
 fi
