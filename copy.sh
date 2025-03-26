@@ -8,8 +8,10 @@ fi
 
 TARGET_DISK="/dev/sda"
 
-# wipe partitions and create a new one with mbr
-echo -e "o\nw" | fdisk ${TARGET_DISK}
+# create new partition with mbr
+parted ${TARGET_DISK} mklabel msdos
+
+parted ${TARGET_DISK} mkpart primary ext4 0% 100%
 
 echo -e "\033[1;31mdisk wiped\033[0m"
 
