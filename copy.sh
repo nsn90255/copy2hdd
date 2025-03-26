@@ -3,7 +3,7 @@ set -e
 
 if ! [ "$(id -u)" -eq 0 ]; then
 	echo "run as root."
-	return 1
+	exit 1
 fi
 
 TARGET_DISK="/dev/sda"
